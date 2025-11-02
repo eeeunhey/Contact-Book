@@ -14,6 +14,13 @@ export const ContactForm = () => {
   const handleAddContact = () => {
     if (!name.trim() || !phoneNumber.trim()) return;
     addContact(name, phoneNumber, email, githubId);
+
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setGithubId("");
+    setGithubData(null);
+    
   };
 
   const getSearchGit = async () => {

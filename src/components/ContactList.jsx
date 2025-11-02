@@ -16,7 +16,7 @@ const ContactList = () => {
       <div className="list-box">
         {/* 제목 + 설명(선택) */}
         <div className="list-head">
-          <h2> 연락처 목록</h2>
+          <h2> Conteact List </h2>
         </div>
 
         {/* 검색 입력줄 */}

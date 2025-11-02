@@ -8,6 +8,7 @@ const useContactBookStore = create((set) => ({
         ...state.contactBook,
         {id:Date.now(), name, phoneNumber, email, githubId },
       ],
+
     })),
 }));
 
