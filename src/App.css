@@ -1,42 +1,205 @@
-#root {
-  max-width: 1280px;
+:root {
+  --card-bg: #fff;
+  --card-br: #dbeafe;
+  --shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  --text: #0f172a;
+  --muted: #64748b;
+  --brand: #2563eb;
+  --radius: 16px;
+  --radius-sm: 14px;
+  --h: 52px; 
+  --gap: 14px;
+  --pad: 22px;
+}
+
+.form-wrapper {
+  max-width: 550px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 18px;
+}
+.form-box {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border: 1px solid var(--card-br);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.field-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.row-2 {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 800px) {
+  .row-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-input .MuiInputBase-root {
+  border-radius: var(--radius-sm);
+  min-height: var(--h);
+  background: #fff;
+}
+.form-input .MuiOutlinedInput-input {
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+.github-row-simple {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+.github-row-simple .btn.small {
+  height: var(--h);
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.gh-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px dashed #e5e7eb;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.gh-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+.link {
+  color: var(--brand);
+  text-decoration: none;
+  font-size: 13px;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+.form-btn-primary {
+  height: var(--h);
+  border-radius: var(--radius-sm) !important;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.list-wrapper {
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.list-box {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.list-head h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.list-head p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.search-row {
+  margin-bottom: 14px;
+}
+
+
+.list-search  {
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+
+@media (min-width: 800px) {
+  .list-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-card {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.contact-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #374151;
+}
+
+
+
+.empty {
+  font-size: 14px;
+  color: #94a3b8;
   text-align: center;
+  padding: 30px 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .card {
-  padding: 2em;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
 }
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 640px) {
+  .github-row-simple {
+    flex-wrap: wrap;
+  }
+  .github-row-simple .btn.small {
+    width: 100%;
+  }
+  .form-actions {
+    justify-content: center;
+  }
 }
