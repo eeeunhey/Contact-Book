@@ -8,8 +8,11 @@ const useContactBookStore = create((set) => ({
         ...state.contactBook,
         {id:Date.now(), name, phoneNumber, email, githubId },
       ],
+   })),
+   deleteContact: (id) => set((state)=> ({
+      contactBook: state.contactBook.filter((item)=> item.id !==id),
+   })),
 
-    })),
 }));
 
 export default useContactBookStore;

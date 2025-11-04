@@ -5,8 +5,8 @@ import { ContactForm } from "./components/ContactForm";
 
 function App() {
   return (
-    <div style={{ padding: 16 }}>
-      <h1> ContactBook</h1>
+    <div className="contact-book">
+      <h1> ContactBook </h1>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <ContactForm />

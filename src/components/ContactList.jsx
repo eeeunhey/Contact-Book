@@ -1,12 +1,12 @@
 import { useState } from "react";
 import useContactBookStore from "../stores/useContactBookStore";
 import { Input } from "@mui/material";
-
+import ContactCard from "./ContectCard";
 const ContactList = () => {
   const [search, setSearch] = useState("");
   const { contactBook } = useContactBookStore();
 
-  // 검색어가 포함된 연락처만 필터링
+
   const result = contactBook.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -14,12 +14,11 @@ const ContactList = () => {
   return (
     <div className="list-wrapper">
       <div className="list-box">
-        {/* 제목 + 설명(선택) */}
+
         <div className="list-head">
           <h2> Conteact List </h2>
         </div>
 
-        {/* 검색 입력줄 */}
         <div className="search-row">
           <Input
             type="text"
@@ -36,12 +35,9 @@ const ContactList = () => {
           {result.length === 0 && <p>검색 결과가 없습니다.</p>}
 
           {result.map((item) => (
-            <div key={item.id} className="card">
-              <p>{item.name}</p>
-              {item.email && <p>{item.email}</p>}
-              {item.phoneNumber && <p>{item.phoneNumber}</p>}
-              {item.githubId && <p>GitHub: {item.githubId}</p>}
-            </div>
+            <div item={item}>
+              <ContactCard  item={item} />
+            </div>              
           ))}
         </div>
       </div>
