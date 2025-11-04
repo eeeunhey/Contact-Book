@@ -39,11 +39,11 @@ const ContactCard = ({ item }) => {
       <div>
         <Button
           variant="contained"
-          size="large"
+          size="small"
           onClick={() => deleteContact(item?.id)}
           className="form-btn-primary"
         >
-          리스트에 추가
+         삭제
         </Button>
       </div>
     </div>
